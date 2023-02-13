@@ -1,0 +1,15 @@
+C:\Users\adm_alteko\Git\Lession1\bin\Debug\net6.0\Lession1.exe
+C:\Users\adm_alteko\Git\Lession1\bin\Debug\net6.0\Lession1.deps.json
+C:\Users\adm_alteko\Git\Lession1\bin\Debug\net6.0\Lession1.runtimeconfig.json
+C:\Users\adm_alteko\Git\Lession1\bin\Debug\net6.0\Lession1.dll
+C:\Users\adm_alteko\Git\Lession1\bin\Debug\net6.0\Lession1.pdb
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.csproj.AssemblyReference.cache
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.AssemblyInfoInputs.cache
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.AssemblyInfo.cs
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.csproj.CoreCompileInputs.cache
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.dll
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\refint\Lession1.dll
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.pdb
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\Lession1.genruntimeconfig.cache
+C:\Users\adm_alteko\Git\Lession1\obj\Debug\net6.0\ref\Lession1.dll
