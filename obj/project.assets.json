@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\adm_alteko\\.nuget\\packages\\": {}
+    "C:\\Users\\deminsv4\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adm_alteko\\Git\\Lession1\\Lession1.csproj",
+      "projectUniqueName": "D:\\Git\\Lesson1\\Lession1.csproj",
       "projectName": "Lession1",
-      "projectPath": "C:\\Users\\adm_alteko\\Git\\Lession1\\Lession1.csproj",
-      "packagesPath": "C:\\Users\\adm_alteko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adm_alteko\\Git\\Lession1\\obj\\",
+      "projectPath": "D:\\Git\\Lesson1\\Lession1.csproj",
+      "packagesPath": "C:\\Users\\deminsv4\\.nuget\\packages\\",
+      "outputPath": "D:\\Git\\Lesson1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\adm_alteko\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\deminsv4\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
