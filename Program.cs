@@ -45,6 +45,7 @@ Console.Write($"max = {max}");
 
 */
 
+/*
 int number;
 Console.Write("Введите число: ");
 
@@ -53,3 +54,24 @@ if (number % 2 == 0)
 	Console.Write($"{number} -> Да");
 else
 	Console.Write($"{number} -> Нет");
+*/
+
+
+/* ----------- Задача 8: 
+Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+*/
+
+/*
+int N, i = 2;
+Console.Write("Введите число: ");
+int.TryParse(Console.ReadLine()!, out N);
+
+N = N < 0 ? N * -1 : N;
+
+while (i <= N)
+{
+	if (i % 2 == 0)
+		Console.Write($"{i}, ");
+	i += 2;
+}
+*/
