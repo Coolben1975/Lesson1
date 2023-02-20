@@ -92,15 +92,22 @@ Console.WriteLine($"A ({A[0]}, {A[1]}, {A[2]}); B ({B[0]}, {B[1]}, {B[2]}) -> {a
 
 
 /*------------------------
-Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-6 -> да
-7 -> да
-1 -> нет
+Задача 23
+
+Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+3 -> 1, 8, 27
+5 -> 1, 8, 27, 64, 125
 */
 
-// Console.Write("Введите число: ");
-// int number;
-// int.TryParse(Console.ReadLine()!, out number);
-// if (number < 6 && number > 0) Console.Write($"{number} -> нет");
-// if (number == 6 || number == 7) Console.Write($"{number} -> да");
+// int N, j;
+// Console.Write($"Введите число N: ");
+// int.TryParse(Console.ReadLine()!, out N);
+// Console.Write($"{N} -> ");
 
+// for (int i = 1; i <= N; i++)
+// {
+// 	j = i * i * i;
+
+// 	Console.Write($"{j}, ");
+// }
