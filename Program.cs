@@ -1,22 +1,7 @@
-﻿/*Console.Write("Введите число: ");
-string text = Console.ReadLine()!; // можно сократить передав сразу в TryParse вместо текста
-//int number = int.Parse(text); ниже сделаем правильнее
-int number;
-int.TryParse(text, out number);
+﻿/*
+Урок 4.Функции
+Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+3, 5 -> 243 (3⁵)
+2, 4-> 16
+*/
 
-//Console.Write(number);
-//Console.Write("^2 = ");
-//Console.Write(number * number);
-Console.Write($"{number}^2 = {number * number}");*/
-
-int number;
-Console.Write("Введите число: ");
-//string text = Console.ReadLine()!; // можно сократить передав сразу в TryParse вместо текста
-//int number = int.Parse(text); ниже сделаем правильнее
-
-int.TryParse(Console.ReadLine()!, out number);
-
-//Console.Write(number);
-//Console.Write("^2 = ");
-//Console.Write(number * number);
-Console.Write($"{number}^2 = {number * number}");
