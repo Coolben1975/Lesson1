@@ -84,64 +84,65 @@ else
 
 
 // ------------ Lesson 7 Двухмерные массивы
-/* ------------Задача 46:** Задайте двуменрый массив размером mxn, заполненный случайными числами.
-
-!!!Понакрутили с проверкой при печати с 3-х менрым
-m=3, n=4
+/* Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+m = 3, n = 4.
+0,5 7 -2 -0,2
+1 -3,3 8 -9,9
+8 7,8 -7,1 9
 */
 
-// int[,] array = new int[5, 3];
+double[,] array = new double[3, 4];
 
-// for (int i = 0; i < array.GetLength(0); i++) // строки
-// {
-// 	for (int j = 0; j < array.GetLength(1); j++) //столбцы
-// 	{
-// 		array[i, j] = new Random().Next(10);
-// 		Console.Write($"{array[i, j]} ");
-// 	}
-// 	Console.WriteLine();
-// }
+for (int i = 0; i < array.GetLength(0); i++) // строки
+{
+	for (int j = 0; j < array.GetLength(1); j++) //столбцы
+	{
+		array[i, j] = Math.Round(new Random().NextDouble() * 10);
+		Console.Write($"{array[i, j]} ");
+	}
+	Console.WriteLine();
+}
 
-// PrintArray(array);
+PrintArray(array);
 
 
-// void PrintArray(Array arr)   //Для печати
-// {
+void PrintArray(Array arr)   //Для печати
+{
 
-// 	switch (arr.Rank) // проверка на мерность массив
-// 	{
-// 		case 1:
-// 			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
-// 				Console.Write($"{arr.GetValue(i)} ");
-// 			break;
+	switch (arr.Rank) // проверка на мерность массив
+	{
+		case 1:
+			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
+				Console.Write($"{arr.GetValue(i)} ");
+			break;
 
-// 		case 2:
-// 			for (int i = 0; i < arr.GetLength(0); i++) // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					Console.Write($"{arr.GetValue(i, j)} ");
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
+		case 2:
+			for (int i = 0; i < arr.GetLength(0); i++) // строки
+			{
+				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+				{
+					Console.Write($"{arr.GetValue(i, j)} ");
+				}
+				Console.WriteLine();
+			}
+			break;
 
-// 		case 3:
-// 			for (int i = 0; i < arr.GetLength(0); i++)  // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
-// 					{
-// 						Console.Write($"{arr.GetValue(i, j, k)} ");
-// 					}
-// 					Console.WriteLine();
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
-// 	}
-// }
+		case 3:
+			for (int i = 0; i < arr.GetLength(0); i++)  // строки
+			{
+				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+				{
+					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
+					{
+						Console.Write($"{arr.GetValue(i, j, k)} ");
+					}
+					Console.WriteLine();
+				}
+				Console.WriteLine();
+			}
+			break;
+	}
+}
 
 /*
 Для "Зубчатых" массивов (массивов разных длинн строк), возможно использовать структуру:
@@ -236,74 +237,74 @@ m = 3, n = 4
 Сумма элементов главной диагонали: 1+9+2 = 12
 */
 
-int[,] array = new int[3, 10];
+// int[,] array = new int[3, 10];
 
-for (int i = 0; i < array.GetLength(0); i++) // Заполнение массива - строки
-{
-	for (int j = 0; j < array.GetLength(1); j++) //столбцы
-		array[i, j] = new Random().Next(10);
-}
+// for (int i = 0; i < array.GetLength(0); i++) // Заполнение массива - строки
+// {
+// 	for (int j = 0; j < array.GetLength(1); j++) //столбцы
+// 		array[i, j] = new Random().Next(10);
+// }
 
-PrintArray(array);
+// PrintArray(array);
 
-/*  это первый вариант - ниже лучше и проще
-int sum = 0;
-for (int i = 0; i < array.GetLength(0); i++)
-{
-	for (int j = 0; j < array.GetLength(1); j++)
-		if (i == j)
-		{
-			Console.Write($"{array[i, j]} ");
-			sum += array[i, j];
-		}
-}
-*/
+// /*  это первый вариант - ниже лучше и проще
+// int sum = 0;
+// for (int i = 0; i < array.GetLength(0); i++)
+// {
+// 	for (int j = 0; j < array.GetLength(1); j++)
+// 		if (i == j)
+// 		{
+// 			Console.Write($"{array[i, j]} ");
+// 			sum += array[i, j];
+// 		}
+// }
+// */
 
-int sum = 0;
-int border = array.GetLength(0) < array.GetLength(1) ? border = array.GetLength(0) : border = array.GetLength(1); //ищем наименьщую сторону массива
+// int sum = 0;
+// int border = array.GetLength(0) < array.GetLength(1) ? border = array.GetLength(0) : border = array.GetLength(1); //ищем наименьщую сторону массива
 
-for (int i = 0; i < border; i++)
-{
-	Console.Write($"{array[i, i]} ");
-	sum += array[i, i];
-}
+// for (int i = 0; i < border; i++)
+// {
+// 	Console.Write($"{array[i, i]} ");
+// 	sum += array[i, i];
+// }
 
-Console.WriteLine($"\nsum = {sum}");
+// Console.WriteLine($"\nsum = {sum}");
 
-void PrintArray(Array arr)   //Для печати
-{
+// void PrintArray(Array arr)   //Для печати
+// {
 
-	switch (arr.Rank) // проверка на мерность массив
-	{
-		case 1:
-			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
-				Console.Write($"{arr.GetValue(i)} ");
-			break;
+// 	switch (arr.Rank) // проверка на мерность массив
+// 	{
+// 		case 1:
+// 			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
+// 				Console.Write($"{arr.GetValue(i)} ");
+// 			break;
 
-		case 2:
-			for (int i = 0; i < arr.GetLength(0); i++) // строки
-			{
-				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-				{
-					Console.Write($"{arr.GetValue(i, j)} ");
-				}
-				Console.WriteLine();
-			}
-			break;
+// 		case 2:
+// 			for (int i = 0; i < arr.GetLength(0); i++) // строки
+// 			{
+// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+// 				{
+// 					Console.Write($"{arr.GetValue(i, j)} ");
+// 				}
+// 				Console.WriteLine();
+// 			}
+// 			break;
 
-		case 3:
-			for (int i = 0; i < arr.GetLength(0); i++)  // строки
-			{
-				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-				{
-					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
-					{
-						Console.Write($"{arr.GetValue(i, j, k)} ");
-					}
-					Console.WriteLine();
-				}
-				Console.WriteLine();
-			}
-			break;
-	}
-}
+// 		case 3:
+// 			for (int i = 0; i < arr.GetLength(0); i++)  // строки
+// 			{
+// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+// 				{
+// 					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
+// 					{
+// 						Console.Write($"{arr.GetValue(i, j, k)} ");
+// 					}
+// 					Console.WriteLine();
+// 				}
+// 				Console.WriteLine();
+// 			}
+// 			break;
+// 	}
+// }
