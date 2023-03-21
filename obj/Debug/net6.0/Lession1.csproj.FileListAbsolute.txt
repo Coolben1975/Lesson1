@@ -28,3 +28,18 @@ D:\Git\Lesson1\obj\Debug\net6.0\refint\Lession1.dll
 D:\Git\Lesson1\obj\Debug\net6.0\Lession1.pdb
 D:\Git\Lesson1\obj\Debug\net6.0\Lession1.genruntimeconfig.cache
 D:\Git\Lesson1\obj\Debug\net6.0\ref\Lession1.dll
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\bin\Debug\net6.0\Lession1.exe
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\bin\Debug\net6.0\Lession1.deps.json
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\bin\Debug\net6.0\Lession1.runtimeconfig.json
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\bin\Debug\net6.0\Lession1.dll
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\bin\Debug\net6.0\Lession1.pdb
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.csproj.AssemblyReference.cache
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.GeneratedMSBuildEditorConfig.editorconfig
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.AssemblyInfoInputs.cache
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.AssemblyInfo.cs
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.csproj.CoreCompileInputs.cache
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.dll
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\refint\Lession1.dll
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.pdb
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\Lession1.genruntimeconfig.cache
+D:\GeekBrains\Знакомство с языками программирования (семинары)\Lesson1\obj\Debug\net6.0\ref\Lession1.dll
