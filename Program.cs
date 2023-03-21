@@ -169,6 +169,141 @@ m=3, n=4
 // }
 
 
-/* ------------Задача :48** 
-
+/* ------------Задача :48** Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле:
+Aij = i+j
+Выведите полученный массив на экран 
+m = 3, n = 4
+0 1 2 3 
+1 2 3 4 
+2 3 4 5
 */
+
+// int[,] array = new int[3, 4];
+
+// for (int i = 0; i < array.GetLength(0); i++) // Заполнение массива - строки
+// {
+// 	for (int j = 0; j < array.GetLength(1); j++) //столбцы
+// 		array[i, j] = i + j;
+// }
+// PrintArray(array);
+
+
+// void PrintArray(Array arr)   //Для печати
+// {
+
+// 	switch (arr.Rank) // проверка на мерность массив
+// 	{
+// 		case 1:
+// 			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
+// 				Console.Write($"{arr.GetValue(i)} ");
+// 			break;
+
+// 		case 2:
+// 			for (int i = 0; i < arr.GetLength(0); i++) // строки
+// 			{
+// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+// 				{
+// 					Console.Write($"{arr.GetValue(i, j)} ");
+// 				}
+// 				Console.WriteLine();
+// 			}
+// 			break;
+
+// 		case 3:
+// 			for (int i = 0; i < arr.GetLength(0); i++)  // строки
+// 			{
+// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+// 				{
+// 					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
+// 					{
+// 						Console.Write($"{arr.GetValue(i, j, k)} ");
+// 					}
+// 					Console.WriteLine();
+// 				}
+// 				Console.WriteLine();
+// 			}
+// 			break;
+// 	}
+// }
+
+
+/* ------------Задача :51** Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами
+(0,0); (1,1) и т.д.)
+Пример:
+1 4 7 2
+5 9 2 3 
+8 4 2 4
+Сумма элементов главной диагонали: 1+9+2 = 12
+*/
+
+int[,] array = new int[3, 10];
+
+for (int i = 0; i < array.GetLength(0); i++) // Заполнение массива - строки
+{
+	for (int j = 0; j < array.GetLength(1); j++) //столбцы
+		array[i, j] = new Random().Next(10);
+}
+
+PrintArray(array);
+
+/*  это первый вариант - ниже лучше и проще
+int sum = 0;
+for (int i = 0; i < array.GetLength(0); i++)
+{
+	for (int j = 0; j < array.GetLength(1); j++)
+		if (i == j)
+		{
+			Console.Write($"{array[i, j]} ");
+			sum += array[i, j];
+		}
+}
+*/
+
+int sum = 0;
+int border = array.GetLength(0) < array.GetLength(1) ? border = array.GetLength(0) : border = array.GetLength(1); //ищем наименьщую сторону массива
+
+for (int i = 0; i < border; i++)
+{
+	Console.Write($"{array[i, i]} ");
+	sum += array[i, i];
+}
+
+Console.WriteLine($"\nsum = {sum}");
+
+void PrintArray(Array arr)   //Для печати
+{
+
+	switch (arr.Rank) // проверка на мерность массив
+	{
+		case 1:
+			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
+				Console.Write($"{arr.GetValue(i)} ");
+			break;
+
+		case 2:
+			for (int i = 0; i < arr.GetLength(0); i++) // строки
+			{
+				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+				{
+					Console.Write($"{arr.GetValue(i, j)} ");
+				}
+				Console.WriteLine();
+			}
+			break;
+
+		case 3:
+			for (int i = 0; i < arr.GetLength(0); i++)  // строки
+			{
+				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+				{
+					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
+					{
+						Console.Write($"{arr.GetValue(i, j, k)} ");
+					}
+					Console.WriteLine();
+				}
+				Console.WriteLine();
+			}
+			break;
+	}
+}
