@@ -1,84 +1,41 @@
-﻿/*Console.Write("Введите число: ");
-string text = Console.ReadLine()!; // можно сократить передав сразу в TryParse вместо текста
-//int number = int.Parse(text); ниже сделаем правильнее
-int number;
-int.TryParse(text, out number);
-
-//Console.Write(number);
-//Console.Write("^2 = ");
-//Console.Write(number * number);
-Console.Write($"{number}^2 = {number * number}");*/
-
-// int number;
-// Console.Write("Введите число: ");
-//string text = Console.ReadLine()!; // можно сократить передав сразу в TryParse вместо текста
-//int number = int.Parse(text); ниже сделаем правильнее
-
-// int.TryParse(Console.ReadLine()!, out number);
-
-//Console.Write(number);
-//Console.Write("^2 = ");
-//Console.Write(number * number);
-// Console.Write($"{number}^2 = {number * number}");
-
-// ------------ Lesson 6 
-/*     ------   задача 39:** Напишите программу, которая перевернет одномерный массив (последний 
-элемент будет на первом месте, а первый на последнем и т.д.)
-[1 2 3 4 5] -> [5 4 3 2 1]
-[6 7 3 6] -> [6 3 7 6]
+﻿/*-----------------Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+0, 7, 8, -2, -2 -> 2
+1, -7, 567, 89, 223-> 3
 */
 
-// int[] array = FillArray(10);
+// Console.Write("Введите элементы(через пробел): ");
+// int[] arr = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
+// int count = 0;
 
-// Console.WriteLine(String.Join(", ", array));
-
-// for (int i = 0; i < array.Length / 2; i++)
+// for (int i = 0; i < arr.Length; i++)
 // {
-// 	int rev = array.Length - i - 1;                  // вычисление обратного элемента 
-// 	(array[i], array[rev]) = (array[rev], array[i]); // смена пары элементов
+// 	Console.Write($"{arr[i]}, ");
+
+// 	if (arr[i] > 0)
+// 		count++;
 // }
 
-// int[] FillArray(int size, int min = 0, int max = 10)
-// {
-// 	int[] arr = new int[size];
-// 	for (int i = 0; i < size; i++)
-// 		arr[i] = new Random().Next(min, max);
-// 	return arr;
-// }
+// Console.WriteLine($"-> {count}");
 
-// Console.WriteLine(String.Join(", ", array));
-
-/* ----------   задача 40:** Напишите программу, которая принимает на вход три числа и 
-проверяет, может ли существовать треугольник с соронами такой длины)
+/* ------------Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 */
 
-// int[] array = new int[3];
-
-// string[] str_nums = Console.ReadLine()!.Split(' ', ',', '.');
-
-
-// for (int i = 0; i < array.Length; i++)
-// 	array[i] = int.Parse(str_nums[i]);
-
-// if (array[0] + array[1] > array[2] && array[1] + array[2] > array[0] && array[0] + array[2] > array[1])
-// 	Console.Write($"Треугольник существует ");
-// else
-// 	Console.Write($"Треугольника не существует ");
-
-/* А можно и так!!!!!!!!!!!	
-
-int[] array = Console.ReadLine()!.Split(' ', ',', '.').Where(i => int.TryParse(i, out _)).Select(int.Parse).ToArray();
-
-if (array[0] + array[1] > array[2] && array[1] + array[2] > array[0] && array[0] + array[2] > array[1])
-	Console.Write($"Треугольник существует ");
-else
-	Console.Write($"Треугольника не существует ");
-*/
+Console.Write("Введите k1: ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b1: ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k2: ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b2: ");
+double b2 = Convert.ToDouble(Console.ReadLine());
 
 
-/*   ------------- Задача 42:** Напишите программу, которая будет преобразовывать десятичное число в двоичное.
-45 -> 101101
-3 -> 11
-2 -> 10
-*/
+double x = -(b1 - b2) / (k1 - k2);
+double y = k1 * x + b1;
+
+x = Math.Round(x, 3);
+y = Math.Round(y, 3);
+
+Console.WriteLine($"Пересечение в точке: ({x};{y})");
 
