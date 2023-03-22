@@ -145,24 +145,24 @@ SummColArrey(array);
 
 void SummColArrey(Array arr)
 {
-double sum;
-Console.Write($"Среднее арифметическое каждого столбца: ");	
-for (int i = 0; i < array.GetLength(1); i++) //бежим по столбцам
-{
-	sum = 0;
-	for (int j = 0; j < array.GetLength(0); j++) 
+	double sum;
+	Console.Write($"Среднее арифметическое каждого столбца: ");
+	for (int i = 0; i < array.GetLength(1); i++) //бежим по столбцам
 	{
-		sum = sum + (array[j, i]);
+		sum = 0;
+		for (int j = 0; j < array.GetLength(0); j++)
+		{
+			sum = sum + (array[j, i]);
+		}
+		Console.Write($"{sum / array.GetLength(0)}; ");
 	}
-	Console.Write($"{sum / i}; ");	
-}
 }
 
 void FillArray(Array arr) // заполняем массив
 {
 	for (int i = 0; i < array.GetLength(0); i++) // строки
-	for (int j = 0; j < array.GetLength(1); j++) //столбцы
-		array[i, j] = new Random().Next(1, 10);
+		for (int j = 0; j < array.GetLength(1); j++) //столбцы
+			array[i, j] = new Random().Next(1, 10);
 }
 
 void PrintArray(Array arr)   //Печать массива
