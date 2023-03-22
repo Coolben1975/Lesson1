@@ -98,6 +98,7 @@ for (int i = 0; i < array.GetLength(0); i++) // строки
 	for (int j = 0; j < array.GetLength(1); j++) //столбцы
 	{
 		array[i, j] = Math.Round(new Random().NextDouble() * 10);
+
 		Console.Write($"{array[i, j]} ");
 	}
 	Console.WriteLine();
@@ -123,7 +124,7 @@ void PrintArray(Array arr)   //Для печати
 				{
 					Console.Write($"{arr.GetValue(i, j)} ");
 				}
-				Console.WriteLine();
+				Console.WriteLine(); пше
 			}
 			break;
 
