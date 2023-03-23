@@ -236,16 +236,6 @@ m = 3, n = 4
 Сумма элементов главной диагонали: 1+9+2 = 12
 */
 
-int[,] array = new int[3, 10];
-
-for (int i = 0; i < array.GetLength(0); i++) // Заполнение массива - строки
-{
-	for (int j = 0; j < array.GetLength(1); j++) //столбцы
-		array[i, j] = new Random().Next(10);
-}
-
-PrintArray(array);
-
 /*  это первый вариант - ниже лучше и проще
 int sum = 0;
 for (int i = 0; i < array.GetLength(0); i++)
@@ -259,51 +249,134 @@ for (int i = 0; i < array.GetLength(0); i++)
 }
 */
 
-int sum = 0;
-int border = array.GetLength(0) < array.GetLength(1) ? border = array.GetLength(0) : border = array.GetLength(1); //ищем наименьщую сторону массива
+// int sum = 0;
+// int border = array.GetLength(0) < array.GetLength(1) ? border = array.GetLength(0) : border = array.GetLength(1); //ищем наименьщую сторону массива
 
-for (int i = 0; i < border; i++)
+// for (int i = 0; i < border; i++)
+// {
+// 	Console.Write($"{array[i, i]} ");
+// 	sum += array[i, i];
+// }
+
+// Console.WriteLine($"\nsum = {sum}");
+
+// void PrintArray(Array arr)   //Для печати
+// {
+
+// 	switch (arr.Rank) // проверка на мерность массив
+// 	{
+// 		case 1:
+// 			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
+// 				Console.Write($"{arr.GetValue(i)} ");
+// 			break;
+
+// 		case 2:
+// 			for (int i = 0; i < arr.GetLength(0); i++) // строки
+// 			{
+// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+// 				{
+// 					Console.Write($"{arr.GetValue(i, j)} ");
+// 				}
+// 				Console.WriteLine();
+// 			}
+// 			break;
+
+// 		case 3:
+// 			for (int i = 0; i < arr.GetLength(0); i++)  // строки
+// 			{
+// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
+// 				{
+// 					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
+// 					{
+// 						Console.Write($"{arr.GetValue(i, j, k)} ");
+// 					}
+// 					Console.WriteLine();
+// 				}
+// 				Console.WriteLine();
+// 			}
+// 			break;
+// 	}
+// }
+
+// ******************
+// ------------ Lesson 8 Двухмерные массивы продолжение
+/* ------------Задача 53:** Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+1 4 7 2
+5 9 2 3
+8 4 2 4
+
+8 4 2 4
+5 9 2 3
+1 4 7 2  */
+
+// int[,] array = new int[3, 4];
+
+// for (int i = 0; i < array.GetLength(0); i++)  // заполняем  и выводим
+// {
+// 	for (int j = 0; j < array.GetLength(1); j++)
+// 	{
+// 		array[i, j] = new Random().Next(10);
+// 		Console.Write($"{array[i, j]}");
+// 	}
+// 	Console.WriteLine();
+// }
+
+// int lastRow = array.GetLength(0) - 1;  // создаем переменную последнего элемента строки
+
+// for (int i = 0; i < array.GetLength(1); i++)  // бежим по столбцам!!!
+// 	(array[0, i], array[lastRow, i]) = (array[lastRow, i], array[0, i]); // меняем элементы строк
+
+// Console.WriteLine();
+
+// for (int i = 0; i < array.GetLength(0); i++)   // выводим полученный массив
+// {
+// 	for (int j = 0; j < array.GetLength(1); j++)
+// 		Console.Write($"{array[i, j]}");
+
+// 	Console.WriteLine();
+// }
+
+
+/* ------------Задача 55:** Задайте двумерный массив. Напишите программу, которая заменяем строки на столбцы.
+В случае, если это невозможно, программа должна вывести сообщение для пользователя.
+!!!!! Расмотреть задачу на списках.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+5 2 6 7
+
+1 5 8 5
+4 9 4 2
+7 2 2 6
+2 3 4 7 */
+
+List<List<int>> array = new List<List<int>>();
+
+for (int i = 0; i < array.Count; i++)  // заполняем  и выводим
 {
-	Console.Write($"{array[i, i]} ");
-	sum += array[i, i];
+	array.Add(new List<int>());
+	for (int j = 0; j < array[i].Count; j++)  //!!!!!!!!!! array[i].Count
+	{
+		array[i].Add(new Random().Next(10));
+		Console.Write($"{array[i][j]} ");
+	}
+	Console.WriteLine();
 }
 
-Console.WriteLine($"\nsum = {sum}");
+int lastRow = array.Count - 1;
 
-void PrintArray(Array arr)   //Для печати
+// for (int i = 0; i < array[0].Count; i++)
+// 	(array[0][i], array[lastRow][i]) = (array[lastRow][i], array[0][i]);
+
+(array[0], array[lastRow]) = (array[lastRow], array[0]);
+
+Console.WriteLine();
+
+for (int i = 0; i < array.Count; i++)   // выводим полученный массив
 {
+	for (int j = 0; j < array[i].Count; j++)
+		Console.Write($"{array[i][j]} ");
 
-	switch (arr.Rank) // проверка на мерность массив
-	{
-		case 1:
-			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
-				Console.Write($"{arr.GetValue(i)} ");
-			break;
-
-		case 2:
-			for (int i = 0; i < arr.GetLength(0); i++) // строки
-			{
-				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-				{
-					Console.Write($"{arr.GetValue(i, j)} ");
-				}
-				Console.WriteLine();
-			}
-			break;
-
-		case 3:
-			for (int i = 0; i < arr.GetLength(0); i++)  // строки
-			{
-				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-				{
-					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
-					{
-						Console.Write($"{arr.GetValue(i, j, k)} ");
-					}
-					Console.WriteLine();
-				}
-				Console.WriteLine();
-			}
-			break;
-	}
+	Console.WriteLine();
 }
