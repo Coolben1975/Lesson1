@@ -301,6 +301,7 @@ for (int i = 0; i < array.GetLength(0); i++)
 // ******************
 // ------------ Lesson 8 Двухмерные массивы продолжение
 /* ------------Задача 53:** Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+!!!!! Расмотреть задачу на списках.
 1 4 7 2
 5 9 2 3
 8 4 2 4
@@ -339,27 +340,27 @@ for (int i = 0; i < array.GetLength(0); i++)
 
 // ----------2 вариант с динамическим массивом
 
-List<List<int>> array = new List<List<int>>();
+// List<List<int>> array = new List<List<int>>();
 
-for (int i = 0; i < array.Count; i++)  // заполняем  и выводим
-{
-	array.Add(new List<int>());
-	for (int j = 0; j < array[i].Count; j++)  //!!!!!!!!!! array[i].Count
-	{
-		array[i].Add(new Random().Next(10));
-		Console.Write($"{array[i][j]} "); 
-	}
-	Console.WriteLine();
-}
+// for (int i = 0; i < 3; i++)  // заполняем  и выводим
+// {
+// 	array.Add(new List<int>());
+// 	for (int j = 0; j < 4; j++)
+// 	{
+// 		array[i].Add(new Random().Next(10));
+// 		Console.Write($"{array[i][j]} ");
+// 	}
+// 	Console.WriteLine();
+// }
 
-int lastRow = array.Count - 1;
+// int lastRow = array.Count - 1;
 
-// for (int i = 0; i < array[0].Count; i++)
-// 	(array[0][i], array[lastRow][i]) = (array[lastRow][i], array[0][i]);
+// // for (int i = 0; i < array[0].Count; i++)
+// // 	(array[0][i], array[lastRow][i]) = (array[lastRow][i], array[0][i]);
 
 // (array[0], array[lastRow]) = (array[lastRow], array[0]);
 
-Console.WriteLine();
+// Console.WriteLine();
 
 // for (int i = 0; i < array.Count; i++)   // выводим полученный массив
 // {
@@ -370,9 +371,37 @@ Console.WriteLine();
 // }
 
 
+
+
+/* ----------------- Дополнительный разбор  - увеличение массива - добавление элементов
+!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+int[] array = new int[5];
+
+foreach (int item in array)
+	Console.Write($"{item} ");
+
+Console.WriteLine();
+
+AddElement(ref array, 3);
+
+foreach (int item in array)
+	Console.Write($"{item} ");
+
+void AddElement(ref int[] arr, int element)
+{
+	int[] t_arr = new int[arr.Length + 1];
+	for (int i = 0; i < arr.Length; i++)
+		t_arr[i] = arr[i];
+	t_arr[t_arr.Length - 1] = element;
+	arr = t_arr;
+}
+
+
+
 /* ------------Задача 55:** Задайте двумерный массив. Напишите программу, которая заменяем строки на столбцы.
 В случае, если это невозможно, программа должна вывести сообщение для пользователя.
-!!!!! Расмотреть задачу на списках.
 Например, задан массив:
 1 4 7 2
 5 9 2 3
@@ -383,3 +412,29 @@ Console.WriteLine();
 4 9 4 2
 7 2 2 6
 2 3 4 7 */
+
+// int[,] array = new int[4, 4];
+
+// for (int i = 0; i < array.GetLength(0); i++)
+// {
+// 	for (int j = 0; j < array.GetLength(1); j++)
+// 	{
+// 		array[i, j] = new Random().Next(10);
+// 		Console.Write($"{array[i, j]}");
+// 	}
+// 	Console.WriteLine();
+// }
+
+
+
+
+
+
+// Console.WriteLine();
+
+// for (int i = 0; i < array.GetLength(0); i++)
+// {
+// 	for (int j = 0; j < array.GetLength(1); j++)
+// 		Console.Write($"{array[i, j]}");
+// 	Console.WriteLine();
+// }
