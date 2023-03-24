@@ -337,6 +337,39 @@ for (int i = 0; i < array.GetLength(0); i++)
 // }
 
 
+// ----------2 вариант с динамическим массивом
+
+List<List<int>> array = new List<List<int>>();
+
+for (int i = 0; i < array.Count; i++)  // заполняем  и выводим
+{
+	array.Add(new List<int>());
+	for (int j = 0; j < array[i].Count; j++)  //!!!!!!!!!! array[i].Count
+	{
+		array[i].Add(new Random().Next(10));
+		Console.Write($"{array[i][j]} "); 
+	}
+	Console.WriteLine();
+}
+
+int lastRow = array.Count - 1;
+
+// for (int i = 0; i < array[0].Count; i++)
+// 	(array[0][i], array[lastRow][i]) = (array[lastRow][i], array[0][i]);
+
+// (array[0], array[lastRow]) = (array[lastRow], array[0]);
+
+Console.WriteLine();
+
+// for (int i = 0; i < array.Count; i++)   // выводим полученный массив
+// {
+// 	for (int j = 0; j < array[i].Count; j++)
+// 		Console.Write($"{array[i][j]} ");
+
+// 	Console.WriteLine();
+// }
+
+
 /* ------------Задача 55:** Задайте двумерный массив. Напишите программу, которая заменяем строки на столбцы.
 В случае, если это невозможно, программа должна вывести сообщение для пользователя.
 !!!!! Расмотреть задачу на списках.
@@ -350,33 +383,3 @@ for (int i = 0; i < array.GetLength(0); i++)
 4 9 4 2
 7 2 2 6
 2 3 4 7 */
-
-List<List<int>> array = new List<List<int>>();
-
-for (int i = 0; i < array.Count; i++)  // заполняем  и выводим
-{
-	array.Add(new List<int>());
-	for (int j = 0; j < array[i].Count; j++)  //!!!!!!!!!! array[i].Count
-	{
-		array[i].Add(new Random().Next(10));
-		Console.Write($"{array[i][j]} ");
-	}
-	Console.WriteLine();
-}
-
-int lastRow = array.Count - 1;
-
-// for (int i = 0; i < array[0].Count; i++)
-// 	(array[0][i], array[lastRow][i]) = (array[lastRow][i], array[0][i]);
-
-(array[0], array[lastRow]) = (array[lastRow], array[0]);
-
-Console.WriteLine();
-
-for (int i = 0; i < array.Count; i++)   // выводим полученный массив
-{
-	for (int j = 0; j < array[i].Count; j++)
-		Console.Write($"{array[i][j]} ");
-
-	Console.WriteLine();
-}
