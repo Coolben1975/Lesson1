@@ -1,385 +1,96 @@
-﻿/*-----------------Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-0, 7, 8, -2, -2 -> 2
-1, -7, 567, 89, 223-> 3
+﻿/*
+Задача 64: Задайте значения N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1.
+N = 5. -> "5, 4, 3, 2, 1"
+N = 8. -> "8, 7, 6, 5, 4, 3, 2, 1"
 */
 
-// Console.Write("Введите элементы(через пробел): ");
-// int[] arr = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
-// int count = 0;
-
-// for (int i = 0; i < arr.Length; i++)
-
-// int number;
-// Console.Write("Введите число: ");
-//string text = Console.ReadLine()!; // можно сократить передав сразу в TryParse вместо текста
-//int number = int.Parse(text); ниже сделаем правильнее
-
-// int.TryParse(Console.ReadLine()!, out number);
-
-//Console.Write(number);
-//Console.Write("^2 = ");
-//Console.Write(number * number);
-// Console.Write($"{number}^2 = {number * number}");
-
-// ------------ Lesson 6 
-/*     ------   задача 39:** Напишите программу, которая перевернет одномерный массив (последний 
-элемент будет на первом месте, а первый на последнем и т.д.)
-[1 2 3 4 5] -> [5 4 3 2 1]
-[6 7 3 6] -> [6 3 7 6]
-*/
-
-// int[] array = FillArray(10);
-
-// Console.WriteLine(String.Join(", ", array));
-
-// for (int i = 0; i < array.Length / 2; i++)
-// {
-// 	int rev = array.Length - i - 1;                  // вычисление обратного элемента 
-// 	(array[i], array[rev]) = (array[rev], array[i]); // смена пары элементов
-// }
-
-// int[] FillArray(int size, int min = 0, int max = 10)
-// {
-// 	int[] arr = new int[size];
-// 	for (int i = 0; i < size; i++)
-// 		arr[i] = new Random().Next(min, max);
-// 	return arr;
-// }
-
-// Console.WriteLine(String.Join(", ", array));
-
-/* ----------   задача 40:** Напишите программу, которая принимает на вход три числа и 
-проверяет, может ли существовать треугольник с соронами такой длины)
-*/
-
-// int[] array = new int[3];
-
-// string[] str_nums = Console.ReadLine()!.Split(' ', ',', '.');
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int count = 1;
+NaturalToLow(number, count);
 
 
-// for (int i = 0; i < array.Length; i++)
-// 	array[i] = int.Parse(str_nums[i]);
-
-// if (array[0] + array[1] > array[2] && array[1] + array[2] > array[0] && array[0] + array[2] > array[1])
-// 	Console.Write($"Треугольник существует ");
-// else
-// 	Console.Write($"Треугольника не существует ");
-
-/* А можно и так!!!!!!!!!!!	
-
-int[] array = Console.ReadLine()!.Split(' ', ',', '.').Where(i => int.TryParse(i, out _)).Select(int.Parse).ToArray();
-
-if (array[0] + array[1] > array[2] && array[1] + array[2] > array[0] && array[0] + array[2] > array[1])
-	Console.Write($"Треугольник существует ");
-else
-	Console.Write($"Треугольника не существует ");
-*/
-
-
-/*   ------------- Задача 42:** Напишите программу, которая будет преобразовывать десятичное число в двоичное.
-45 -> 101101
-3 -> 11
-2 -> 10
-*/
-
-
-// ------------ Lesson 7 Двухмерные массивы
-/* ------------Задача 46:** Задайте двуменрый массив размером mxn, заполненный случайными числами.
-
-!!!Понакрутили с проверкой при печати с 3-х менрым
-m=3, n=4
-*/
-
-// int[,] array = new int[5, 3];
-
-// for (int i = 0; i < array.GetLength(0); i++) // строки
-// {
-// 	for (int j = 0; j < array.GetLength(1); j++) //столбцы
-// 	{
-// 		array[i, j] = new Random().Next(10);
-// 		Console.Write($"{array[i, j]} ");
-// 	}
-// 	Console.WriteLine();
-// }
-
-// PrintArray(array);
-
-
-// void PrintArray(Array arr)   //Для печати
-// {
-
-// 	switch (arr.Rank) // проверка на мерность массив
-// 	{
-// 		case 1:
-// 			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
-// 				Console.Write($"{arr.GetValue(i)} ");
-// 			break;
-
-// 		case 2:
-// 			for (int i = 0; i < arr.GetLength(0); i++) // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					Console.Write($"{arr.GetValue(i, j)} ");
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
-
-// 		case 3:
-// 			for (int i = 0; i < arr.GetLength(0); i++)  // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
-// 					{
-// 						Console.Write($"{arr.GetValue(i, j, k)} ");
-// 					}
-// 					Console.WriteLine();
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
-// 	}
-// }
+void NaturalToLow(int n, int count)
+{
+	if (count > n)
+	{
+		return;
+	}
+	else
+	{
+		NaturalToLow(n, count + 1);
+		Console.Write(count + " ");
+	}
+}
 
 /*
-Для "Зубчатых" массивов (массивов разных длинн строк), возможно использовать структуру:
-!!!! Доп вопрос
-*/
-// List<List<int>> array = new List<List<int>>();
-
-// array.Add(new List<int>());
-// array[0].Add(5);
-// array[0].Add(1);
-// array[0].Add(4);
-// array.Add(new List<int>());
-// array[1].Add(5);
-// array.Add(new List<int>());
-// array[2].Add(5);
-// array[2].Add(1);
-
-// for (int i = 0; i < array.Count; i++) //Строки
-// {
-// 	for (int j = 0; j < array[i].Count; j++) //столбцы
-// 	{
-// 		Console.Write($"{array[i][j]} ");
-// 	}
-// 	Console.WriteLine();
-// }
-
-
-/* ------------Задача :48** Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле:
-Aij = i+j
-Выведите полученный массив на экран 
-m = 3, n = 4
-0 1 2 3 
-1 2 3 4 
-2 3 4 5
+Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+M = 1; N = 15 -> 120
+M = 4; N = 8. -> 30
 */
 
-// int[,] array = new int[3, 4];
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
-// for (int i = 0; i < array.GetLength(0); i++) // Заполнение массива - строки
-// {
-// 	for (int j = 0; j < array.GetLength(1); j++) //столбцы
-// 		array[i, j] = i + j;
-// }
-// PrintArray(array);
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
+SumFromMToN(m, n);
 
-// void PrintArray(Array arr)   //Для печати
-// {
-
-// 	switch (arr.Rank) // проверка на мерность массив
-// 	{
-// 		case 1:
-// 			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
-// 				Console.Write($"{arr.GetValue(i)} ");
-// 			break;
-
-// 		case 2:
-// 			for (int i = 0; i < arr.GetLength(0); i++) // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					Console.Write($"{arr.GetValue(i, j)} ");
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
-
-// 		case 3:
-// 			for (int i = 0; i < arr.GetLength(0); i++)  // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
-// 					{
-// 						Console.Write($"{arr.GetValue(i, j, k)} ");
-// 					}
-// 					Console.WriteLine();
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
-// 	}
-// }
-
-
-/* ------------Задача :51** Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами
-(0,0); (1,1) и т.д.)
-Пример:
-1 4 7 2
-5 9 2 3 
-8 4 2 4
-Сумма элементов главной диагонали: 1+9+2 = 12
-*/
-
-/*  это первый вариант - ниже лучше и проще
-int sum = 0;
-for (int i = 0; i < array.GetLength(0); i++)
+// вызов функции "сумма чисел от M до N"
+void SumFromMToN(int m, int n)
 {
-	for (int j = 0; j < array.GetLength(1); j++)
-		if (i == j)
-		{
-			Console.Write($"{array[i, j]} ");
-			sum += array[i, j];
-		}
+	Console.Write(SumMN(m - 1, n));
 }
-*/
 
-// int sum = 0;
-// int border = array.GetLength(0) < array.GetLength(1) ? border = array.GetLength(0) : border = array.GetLength(1); //ищем наименьщую сторону массива
-
-// for (int i = 0; i < border; i++)
-// {
-// 	Console.Write($"{array[i, i]} ");
-// 	sum += array[i, i];
-// }
-
-// Console.WriteLine($"\nsum = {sum}");
-
-// void PrintArray(Array arr)   //Для печати
-// {
-
-// 	switch (arr.Rank) // проверка на мерность массив
-// 	{
-// 		case 1:
-// 			for (int i = 0; i < arr.GetLength(0); i++) //строка одномерного массива
-// 				Console.Write($"{arr.GetValue(i)} ");
-// 			break;
-
-// 		case 2:
-// 			for (int i = 0; i < arr.GetLength(0); i++) // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					Console.Write($"{arr.GetValue(i, j)} ");
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
-
-// 		case 3:
-// 			for (int i = 0; i < arr.GetLength(0); i++)  // строки
-// 			{
-// 				for (int j = 0; j < arr.GetLength(1); j++) //столбцы
-// 				{
-// 					for (int k = 0; k < arr.GetLength(2); k++) //3 измерение
-// 					{
-// 						Console.Write($"{arr.GetValue(i, j, k)} ");
-// 					}
-// 					Console.WriteLine();
-// 				}
-// 				Console.WriteLine();
-// 			}
-// 			break;
-// 	}
-// }
-
-// ******************
-// ------------ Lesson 8 Двухмерные массивы продолжение
-/* ------------Задача 53:** Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
-1 4 7 2
-5 9 2 3
-8 4 2 4
-
-8 4 2 4
-5 9 2 3
-1 4 7 2  */
-
-// int[,] array = new int[3, 4];
-
-// for (int i = 0; i < array.GetLength(0); i++)  // заполняем  и выводим
-// {
-// 	for (int j = 0; j < array.GetLength(1); j++)
-// 	{
-// 		array[i, j] = new Random().Next(10);
-// 		Console.Write($"{array[i, j]}");
-// 	}
-// 	Console.WriteLine();
-// }
-
-// int lastRow = array.GetLength(0) - 1;  // создаем переменную последнего элемента строки
-
-// for (int i = 0; i < array.GetLength(1); i++)  // бежим по столбцам!!!
-// 	(array[0, i], array[lastRow, i]) = (array[lastRow, i], array[0, i]); // меняем элементы строк
-
-// Console.WriteLine();
-
-// for (int i = 0; i < array.GetLength(0); i++)   // выводим полученный массив
-// {
-// 	for (int j = 0; j < array.GetLength(1); j++)
-// 		Console.Write($"{array[i, j]}");
-
-// 	Console.WriteLine();
-// }
-
-
-// ----------2 вариант с динамическим массивом
-
-List<List<int>> array = new List<List<int>>();
-
-for (int i = 0; i < array.Count; i++)  // заполняем  и выводим
+// функция сумма чисел от M до N
+int SumMN(int m, int n)
 {
-	array.Add(new List<int>());
-	for (int j = 0; j < array[i].Count; j++)  //!!!!!!!!!! array[i].Count
+	int res = m;
+	if (m == n)
+		return 0;
+	else
 	{
-		array[i].Add(new Random().Next(10));
-		Console.Write($"{array[i][j]} "); 
+		m++;
+		res = m + SumMN(m, n);
+		return res;
 	}
-	Console.WriteLine();
 }
 
-int lastRow = array.Count - 1;
+/*
+Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+m = 2, n = 3 -> A(m,n) = 9
+m = 3, n = 2 -> A(m,n) = 29
+*/
 
-// for (int i = 0; i < array[0].Count; i++)
-// 	(array[0][i], array[lastRow][i]) = (array[lastRow][i], array[0][i]);
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
-// (array[0], array[lastRow]) = (array[lastRow], array[0]);
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine();
-
-// for (int i = 0; i < array.Count; i++)   // выводим полученный массив
-// {
-// 	for (int j = 0; j < array[i].Count; j++)
-// 		Console.Write($"{array[i][j]} ");
-
-// 	Console.WriteLine();
-// }
+AkkermanFunction(m, n);
 
 
-/* ------------Задача 55:** Задайте двумерный массив. Напишите программу, которая заменяем строки на столбцы.
-В случае, если это невозможно, программа должна вывести сообщение для пользователя.
-!!!!! Расмотреть задачу на списках.
-Например, задан массив:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-5 2 6 7
+// вызов функции Аккермана
+void AkkermanFunction(int m, int n)
+{
+	Console.Write(Akkerman(m, n));
+}
 
-1 5 8 5
-4 9 4 2
-7 2 2 6
-2 3 4 7 */
+// функция Аккермана
+int Akkerman(int m, int n)
+{
+	if (m == 0)
+	{
+		return n + 1;
+	}
+	else if (n == 0 && m > 0)
+	{
+		return Akkerman(m - 1, 1);
+	}
+	else
+	{
+		return (Akkerman(m - 1, Akkerman(m, n - 1)));
+	}
+}
